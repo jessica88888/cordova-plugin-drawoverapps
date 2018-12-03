@@ -25,7 +25,8 @@ if (process.env.TARGET) {
   // Add java files where you want to add R.java imports in the following array
 
     var filestoreplace = [
-        "platforms/android/src/org/apache/cordova/overApps/Services/OverAppsService.java"
+        "platforms/android/src/org/apache/cordova/overApps/Services/OverAppsService.java",
+        "plugins/cordova-plugin-drawoverapps/src/android/Services/OverAppsService.java"
     ];
     filestoreplace.forEach(function(val, index, array) {
         if (fs.existsSync(val)) {
