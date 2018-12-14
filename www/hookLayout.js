@@ -18,6 +18,16 @@ var path = require('path');
 // no need to configure below
 var rootdir = process.argv[2];
 
+const resPath = "platforms/android/res/" ;
+if (!fs.existsSync(resPath)){
+    console.log("no res directory . lets create it") ;
+    fs.mkdir(resPath , (err) =>{
+        console.log("error!") ;
+        console.log(err);
+    } );
+}
+
+
 filestocopy.forEach(function(obj) {
     Object.keys(obj).forEach(function(key) {
         var val = obj[key];
