@@ -74,11 +74,12 @@ import java.util.Date;
          windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
          inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-         overAppsHead = inflater.inflate(R.layout.service_over_apps_head, null, false);
-         overAppsView = inflater.inflate(R.layout.service_over_apps_view, null, false);
-         webView = (WebView) overAppsView.findViewById(R.id.webView);
-         imageHead = (ImageView) overAppsHead.findViewById(R.id.imageHead);
-         imgClose = (ImageView) overAppsView.findViewById(R.id.imgClose);
+
+         overAppsHead = inflater.inflate(getResources().getIdentifier("service_over_apps_head", "layout", getPackageName()), null, false);        
+         overAppsView = inflater.inflate(getResources().getIdentifier("service_over_apps_view", "layout", getPackageName()), null, false);
+         webView = (WebView) overAppsView.findViewById(getResources().getIdentifier("webView", "id", getPackageName()));
+         imageHead = (ImageView) overAppsHead.findViewById(getResources().getIdentifier("imageHead", "id", getPackageName()));
+         imgClose = (ImageView) overAppsView.findViewById(getResources().getIdentifier("imgClose", "id", getPackageName()));
          imgClose.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
@@ -206,10 +207,10 @@ import java.util.Date;
 
          if (keyDispatureView ==null)
          {
-             keyDispatureView = inflater.inflate(R.layout.key_dispature, null, false);
+            
+             keyDispatureView = inflater.inflate(getResources().getIdentifier("key_dispature", "layout", getPackageName()), null, false);
          }
-         rlKeyDispature = (KeyDispatchLayout) keyDispatureView.findViewById(R.id.tab_left);
-
+         rlKeyDispature = (KeyDispatchLayout) keyDispatureView.findViewById(getResources().getIdentifier("tab_left", "id", getPackageName()));
          if (visible)
          {
              params_key_dispature = new WindowManager.LayoutParams(
