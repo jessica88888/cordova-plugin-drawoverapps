@@ -434,7 +434,7 @@ public class OverAppsService extends Service {
         public void openApp() {
             Log.v("myDebug" , "openApp");
             mContext.startActivity(new Intent(mContext, 
-            your.app.id.MainActivity.class) // edit here
+            com.phonegap.helloworld.MainActivity.class) // edit here
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
     }
